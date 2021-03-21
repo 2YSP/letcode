@@ -12,8 +12,8 @@ public class AddTwoNumber {
      * Definition for singly-linked list.
      */
     class ListNode{
-        int val;
-        ListNode next;
+        public int val;
+        public ListNode next;
         ListNode(){};
 
         ListNode(int val){
