@@ -7,23 +7,6 @@ package cn.sp.list;
  */
 public class ReverseList {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     /**
      * 输入:1->2->3->4->5->NULL
      * 输出:5->4->3->2->1->NULL
