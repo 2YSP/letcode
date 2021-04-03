@@ -36,7 +36,37 @@ public class Trap {
     }
 
     /**
+     * 解法三： 动态规划
+     * 使用两个数组提前存储当前位置左右方向的最大值
+     *
+     * @param height
+     * @return
+     */
+    public int trap3(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int ans = 0;
+        int size = height.length;
+        // 从左往右看
+        int[] left_max = new int[size];
+        int[] right_max = new int[size];
+        for (int i = 1; i < size; i++) {
+            left_max[i] = Math.max(height[i], left_max[i - 1]);
+        }
+        for (int i = size - 2; i >= 0; i--) {
+            right_max[i] = Math.max(height[i], right_max[i + 1]);
+        }
+        for (int i = 1; i < size - 1; i++) {
+            ans += Math.min(left_max[i], right_max[i]) - height[i];
+        }
+        return ans;
+    }
+
+    /**
      * 解法二：使用双指针
+     * 时间复杂度： O(n)
+     * 空间复杂度：O(1)
      *
      * @param height
      * @return
@@ -71,7 +101,7 @@ public class Trap {
     public static void main(String[] args) {
         int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         Trap obj = new Trap();
-        int result = obj.trap2(height);
+        int result = obj.trap3(height);
         System.out.println(result);
     }
 }
