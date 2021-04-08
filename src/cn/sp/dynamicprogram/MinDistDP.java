@@ -42,5 +42,7 @@ public class MinDistDP {
         int n = 4;
         MinDistDP obj = new MinDistDP();
         System.out.println("最短路径为：" + obj.minDistDP(matrix, n));
+
+        System.out.println("ss");
     }
 }
