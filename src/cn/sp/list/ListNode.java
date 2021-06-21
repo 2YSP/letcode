@@ -2,7 +2,7 @@ package cn.sp.list;
 
 /**
  * @Author: Ship
- * @Description:
+ * @Description: 单链表
  * @Date: Created in 2021/3/23
  */
 public class ListNode {
